@@ -37,7 +37,7 @@ export default function SatanProject() {
     {
       key: "horns",
       name: "Horns",
-      x: 50, y: 9,
+      x: 50, y: 10,
       origin: "Pre-Christian gods like Pan, Cernunnos, and various Mesopotamian deities.",
       why: "Horns originally symbolized divine power, fertility, and strength. As Christianity discredited older gods, horned deities were recast as demonic. Medieval artists then standardized horns as visual shorthand for evil.",
       type: "Cultural / Artistic",
@@ -46,7 +46,7 @@ export default function SatanProject() {
     {
       key: "wings",
       name: "Wings",
-      x: 17, y: 25,
+      x: 18, y: 25,
       origin: "The 'fallen angel' tradition — angels have wings, so a fallen one does too.",
       why: "Once Satan was identified with a fallen angel (Lucifer), artists kept the wings but made them dark, leathery, and bat-like to mark the corruption. The contrast with white feathered angel wings is a purely artistic invention.",
       type: "Theological / Artistic",
@@ -55,7 +55,7 @@ export default function SatanProject() {
     {
       key: "skin",
       name: "Red Skin",
-      x: 50, y: 33,
+      x: 50, y: 32,
       origin: "Medieval art, reinforced by mystery plays and later pop culture.",
       why: "Red was the color of fire, blood, sin, and Hell in the medieval imagination. Mystery plays dressed actors playing devils in red, and that stage convention bled into art and eventually into cartoons. The Bible never describes Satan's skin color.",
       type: "Artistic / Cultural",
@@ -64,7 +64,7 @@ export default function SatanProject() {
     {
       key: "claws",
       name: "Claws",
-      x: 23, y: 50,
+      x: 31, y: 63,
       origin: "Medieval bestiaries blending dragons, beasts of prey, and birds of carrion.",
       why: "Medieval artists drew on the scariest features of nature when designing the devil. Sharp claws appear on demons in church frescoes, manuscript illuminations, and Last Judgment scenes to signal that the figure is a predator on human souls — a visual borrowed from monsters, not scripture.",
       type: "Artistic",
@@ -73,7 +73,7 @@ export default function SatanProject() {
     {
       key: "tail",
       name: "Tail",
-      x: 62, y: 70,
+      x: 70, y: 87,
       origin: "Medieval bestiaries and monster art.",
       why: "Medieval artists drew on dragons, serpents, and beasts when designing demons, and a tail was a standard feature of monstrous creatures. The forked tip became a signature flourish in later illustrations. There is no biblical mention of Satan having a tail.",
       type: "Artistic",
@@ -82,7 +82,7 @@ export default function SatanProject() {
     {
       key: "hooves",
       name: "Goat Legs & Hooves",
-      x: 50, y: 93,
+      x: 54, y: 95,
       origin: "The Greek god Pan and other goat-deities.",
       why: "Pan was a horned, hooved, half-goat god of wild places and lust. When the Church demonized pagan gods, Pan's body was recycled as Satan's. Goats also became symbolically linked to sin through Matthew 25's image of separating sheep from goats.",
       type: "Pagan / Cultural",
@@ -594,8 +594,7 @@ function SatanFigure({ features, activeFeature, onSelect }) {
         alt="Original AI-generated illustration of the modern devil figure, showing horns, red skin, wings, claws, tail, and goat-like hooves."
         className="block w-full h-auto select-none pointer-events-none"
         style={{
-          mixBlendMode: "lighten",
-          filter: "drop-shadow(0 10px 40px rgba(180,30,30,0.35))",
+          filter: "drop-shadow(0 10px 40px rgba(180,30,30,0.45))",
         }}
         draggable={false}
       />
