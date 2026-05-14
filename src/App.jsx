@@ -37,7 +37,7 @@ export default function SatanProject() {
     {
       key: "horns",
       name: "Horns",
-      x: 50, y: 10,
+      x: 50, y: 9,
       origin: "Pre-Christian gods like Pan, Cernunnos, and various Mesopotamian deities.",
       why: "Horns originally symbolized divine power, fertility, and strength. As Christianity discredited older gods, horned deities were recast as demonic. Medieval artists then standardized horns as visual shorthand for evil.",
       type: "Cultural / Artistic",
@@ -46,7 +46,7 @@ export default function SatanProject() {
     {
       key: "wings",
       name: "Wings",
-      x: 18, y: 25,
+      x: 15, y: 30,
       origin: "The 'fallen angel' tradition — angels have wings, so a fallen one does too.",
       why: "Once Satan was identified with a fallen angel (Lucifer), artists kept the wings but made them dark, leathery, and bat-like to mark the corruption. The contrast with white feathered angel wings is a purely artistic invention.",
       type: "Theological / Artistic",
@@ -55,7 +55,7 @@ export default function SatanProject() {
     {
       key: "skin",
       name: "Red Skin",
-      x: 50, y: 32,
+      x: 50, y: 30,
       origin: "Medieval art, reinforced by mystery plays and later pop culture.",
       why: "Red was the color of fire, blood, sin, and Hell in the medieval imagination. Mystery plays dressed actors playing devils in red, and that stage convention bled into art and eventually into cartoons. The Bible never describes Satan's skin color.",
       type: "Artistic / Cultural",
@@ -64,7 +64,7 @@ export default function SatanProject() {
     {
       key: "claws",
       name: "Claws",
-      x: 31, y: 63,
+      x: 30, y: 65,
       origin: "Medieval bestiaries blending dragons, beasts of prey, and birds of carrion.",
       why: "Medieval artists drew on the scariest features of nature when designing the devil. Sharp claws appear on demons in church frescoes, manuscript illuminations, and Last Judgment scenes to signal that the figure is a predator on human souls — a visual borrowed from monsters, not scripture.",
       type: "Artistic",
@@ -73,7 +73,7 @@ export default function SatanProject() {
     {
       key: "tail",
       name: "Tail",
-      x: 70, y: 87,
+      x: 72, y: 85,
       origin: "Medieval bestiaries and monster art.",
       why: "Medieval artists drew on dragons, serpents, and beasts when designing demons, and a tail was a standard feature of monstrous creatures. The forked tip became a signature flourish in later illustrations. There is no biblical mention of Satan having a tail.",
       type: "Artistic",
@@ -82,30 +82,10 @@ export default function SatanProject() {
     {
       key: "hooves",
       name: "Goat Legs & Hooves",
-      x: 54, y: 95,
+      x: 52, y: 96,
       origin: "The Greek god Pan and other goat-deities.",
       why: "Pan was a horned, hooved, half-goat god of wild places and lust. When the Church demonized pagan gods, Pan's body was recycled as Satan's. Goats also became symbolically linked to sin through Matthew 25's image of separating sheep from goats.",
       type: "Pagan / Cultural",
-      biblical: false,
-    },
-  ];
-
-  // Features not shown on the figure but still part of the modern image.
-  const associatedFeatures = [
-    {
-      key: "pitchfork",
-      name: "Pitchfork",
-      origin: "The tridents of Greek and Roman gods like Poseidon and Hades.",
-      why: "Hades, ruler of the Greek underworld, carried a trident. As his domain merged with the Christian Hell, his weapon stuck around. The pitchfork is also a farming tool, which medieval artists used to depict demons tormenting the damned.",
-      type: "Pagan / Cultural",
-      biblical: false,
-    },
-    {
-      key: "fire",
-      name: "Fire & Hell",
-      origin: "A blend of Jewish Gehenna, Greek Hades, and medieval imagination.",
-      why: "Gehenna was a burning garbage valley near Jerusalem that became a metaphor for divine punishment. Greek and Roman underworld imagery added rivers, darkness, and torment. Medieval artists fused all of it into the fiery Hell we picture today — even though the Bible never says Satan rules it.",
-      type: "Cultural / Artistic",
       biblical: false,
     },
   ];
@@ -153,8 +133,7 @@ export default function SatanProject() {
     },
   ];
 
-  const allFeatures = [...features, ...associatedFeatures];
-  const activeFeatureData = allFeatures.find((f) => f.key === activeFeature);
+  const activeFeatureData = features.find((f) => f.key === activeFeature);
 
   // ----------------------------------------------------------------
   // RENDER
@@ -266,9 +245,6 @@ export default function SatanProject() {
             {/* Image with hotspot overlay */}
             <div className="lg:col-span-3">
               <div className="relative bg-gradient-to-b from-[#1a0d0d] to-[#0d0a0a] border border-stone-800 rounded-sm p-6">
-                <div className="absolute top-4 left-4 mono-font text-[9px] tracking-[0.3em] uppercase text-amber-500/80 z-10">
-                  Specimen No. 666 · Diabolus Modernus
-                </div>
                 <SatanFigure
                   features={features}
                   activeFeature={activeFeature}
@@ -304,39 +280,6 @@ export default function SatanProject() {
                 ))}
               </ul>
 
-              {/* Associated features (not on figure) */}
-              <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-amber-500/70 mt-8 mb-4">
-                ◇ Also Associated
-              </div>
-              <p className="text-[12px] text-stone-500 italic mb-3 leading-relaxed">
-                Not depicted on this figure, but part of the modern devil's image:
-              </p>
-              <ul className="space-y-2">
-                {associatedFeatures.map((f, i) => (
-                  <li key={f.key}>
-                    <button
-                      onClick={() => setActiveFeature(f.key)}
-                      className="w-full text-left flex items-center gap-3 px-4 py-3 border border-stone-800 hover:border-amber-700 hover:bg-amber-950/10 transition-all group"
-                    >
-                      <span className="mono-font text-[10px] text-stone-500 group-hover:text-amber-500">
-                        {String(features.length + i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="display-font text-stone-200 group-hover:text-amber-300 flex-1">
-                        {f.name}
-                      </span>
-                      <span className="text-stone-600 group-hover:text-amber-400">→</span>
-                    </button>
-                  </li>
-                ))}
-              </ul>
-
-              {/* Image copyright statement */}
-              <div className="mt-6 p-4 border border-stone-900 bg-stone-950/40 text-[11px] text-stone-500 leading-relaxed">
-                <div className="mono-font text-[9px] tracking-[0.3em] uppercase text-amber-500/60 mb-2">
-                  ◇ Image Notice
-                </div>
-                The illustration shown is an <span className="text-stone-300">original AI-generated image</span> created by the project author specifically for this academic project. Any cartoon or copyrighted devil illustrations referenced elsewhere are reproduced solely for educational commentary and analysis under fair use (17 U.S.C. § 107). No copyright infringement is intended; all rights remain with their respective holders.
-              </div>
             </div>
           </div>
         </div>
@@ -375,10 +318,6 @@ export default function SatanProject() {
               ]}
             />
           </div>
-
-          <p className="mt-8 text-center text-stone-400 italic max-w-3xl mx-auto">
-            The figure on the right is not a translation of the figure on the left. It is a <span className="text-amber-400">visual construction</span> built on top of him.
-          </p>
         </div>
       </section>
 
@@ -386,12 +325,9 @@ export default function SatanProject() {
       <section id="sources" className="relative py-20 px-6 border-t border-stone-900">
         <div className="max-w-4xl mx-auto">
           <SectionLabel>III. Annotated Bibliography</SectionLabel>
-          <h2 className="display-font text-3xl sm:text-5xl text-stone-100 mb-3">
+          <h2 className="display-font text-3xl sm:text-5xl text-stone-100 mb-10">
             <span className="italic gold-text">Sources</span> & Notes
           </h2>
-          <p className="text-stone-400 mb-10 italic text-lg">
-            MLA format, with a short note on how each one shaped the project.
-          </p>
 
           <div className="space-y-6">
             {sources.map((s, i) => (
@@ -436,23 +372,13 @@ export default function SatanProject() {
         </div>
       </section>
 
-      {/* ================== FOOTER WITH FULL COPYRIGHT ================== */}
+      {/* ================== FOOTER ================== */}
       <footer className="border-t border-stone-900 bg-[#0a0808] py-10 px-6">
-        <div className="max-w-4xl mx-auto space-y-6">
-          <div className="border border-stone-900 p-5 bg-stone-950/40">
-            <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-amber-500/70 mb-3">
-              ◇ Copyright Notice & Fair Use Statement
-            </div>
-            <p className="text-[12px] text-stone-400 leading-relaxed">
-              Any cartoon or copyrighted devil illustrations referenced in this project are the property of their respective copyright holders. They are reproduced or referenced here solely for the purposes of education, criticism, commentary, and academic analysis as part of a student final project examining the visual development of Satan in modern popular culture. This use is non-commercial and is believed to constitute fair use under Section 107 of the U.S. Copyright Act, which permits limited use of copyrighted material for purposes such as criticism, comment, teaching, scholarship, and research. No copyright infringement is intended, and no ownership is claimed. The interactive devil diagram on this page is original artwork created specifically for this project.
-            </p>
-          </div>
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-3 text-stone-600 mono-font text-[10px] tracking-[0.3em] uppercase">
-            <div>Satan & The Supernatural · Final Project</div>
-            <button onClick={() => scrollTo("figure")} className="hover:text-amber-500 transition-colors">
-              ↑ Return to top
-            </button>
-          </div>
+        <div className="max-w-4xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-stone-600 mono-font text-[10px] tracking-[0.3em] uppercase">
+          <div>Satan & The Supernatural · Final Project</div>
+          <button onClick={() => scrollTo("figure")} className="hover:text-amber-500 transition-colors">
+            ↑ Return to top
+          </button>
         </div>
       </footer>
 
@@ -518,20 +444,20 @@ export default function SatanProject() {
             <div className="border-t border-stone-800 px-8 py-4 flex items-center justify-between bg-stone-950/40">
               <button
                 onClick={() => {
-                  const idx = allFeatures.findIndex((f) => f.key === activeFeature);
-                  setActiveFeature(allFeatures[(idx - 1 + allFeatures.length) % allFeatures.length].key);
+                  const idx = features.findIndex((f) => f.key === activeFeature);
+                  setActiveFeature(features[(idx - 1 + features.length) % features.length].key);
                 }}
                 className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-amber-400 transition-colors"
               >
                 ← Prev
               </button>
               <span className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-600">
-                {allFeatures.findIndex((f) => f.key === activeFeature) + 1} / {allFeatures.length}
+                {features.findIndex((f) => f.key === activeFeature) + 1} / {features.length}
               </span>
               <button
                 onClick={() => {
-                  const idx = allFeatures.findIndex((f) => f.key === activeFeature);
-                  setActiveFeature(allFeatures[(idx + 1) % allFeatures.length].key);
+                  const idx = features.findIndex((f) => f.key === activeFeature);
+                  setActiveFeature(features[(idx + 1) % features.length].key);
                 }}
                 className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-400 hover:text-amber-400 transition-colors"
               >
