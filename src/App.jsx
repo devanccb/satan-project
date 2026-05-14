@@ -64,7 +64,7 @@ export default function SatanProject() {
     {
       key: "claws",
       name: "Claws",
-      x: 30, y: 65,
+      x: 27, y: 61,
       origin: "Medieval bestiaries blending dragons, beasts of prey, and birds of carrion.",
       why: "Medieval artists drew on the scariest features of nature when designing the devil. Sharp claws appear on demons in church frescoes, manuscript illuminations, and Last Judgment scenes to signal that the figure is a predator on human souls — a visual borrowed from monsters, not scripture.",
       type: "Artistic",
@@ -73,7 +73,7 @@ export default function SatanProject() {
     {
       key: "tail",
       name: "Tail",
-      x: 72, y: 85,
+      x: 85, y: 82,
       origin: "Medieval bestiaries and monster art.",
       why: "Medieval artists drew on dragons, serpents, and beasts when designing demons, and a tail was a standard feature of monstrous creatures. The forked tip became a signature flourish in later illustrations. There is no biblical mention of Satan having a tail.",
       type: "Artistic",
@@ -82,7 +82,7 @@ export default function SatanProject() {
     {
       key: "hooves",
       name: "Goat Legs & Hooves",
-      x: 52, y: 96,
+      x: 52, y: 94,
       origin: "The Greek god Pan and other goat-deities.",
       why: "Pan was a horned, hooved, half-goat god of wild places and lust. When the Church demonized pagan gods, Pan's body was recycled as Satan's. Goats also became symbolically linked to sin through Matthew 25's image of separating sheep from goats.",
       type: "Pagan / Cultural",
