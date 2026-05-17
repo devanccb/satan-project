@@ -235,7 +235,7 @@ export default function SatanProject() {
         <div className="max-w-6xl mx-auto">
           <SectionLabel>I. The Specimen</SectionLabel>
           <h2 className="display-font text-3xl sm:text-5xl text-stone-100 mb-3">
-            An <span className="italic gold-text">Anatomy</span> of the Devil
+            The <span className="italic gold-text">Anatomy</span> of Satan
           </h2>
           <p className="text-stone-400 max-w-2xl mb-12 italic text-lg">
             Click any glowing point on the figure to learn where that feature came from.
