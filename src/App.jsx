@@ -162,7 +162,7 @@ export default function SatanProject() {
         />
         <div className="relative max-w-4xl mx-auto text-center">
           <div className="reveal mono-font text-[10px] sm:text-xs tracking-[0.5em] uppercase text-amber-500/70 mb-6">
-            ✦ A Final Project in Religious & Visual History ✦
+            ✦ Religion and Medieval Art History ✦
           </div>
           <h1 className="reveal display-font text-5xl sm:text-7xl font-bold leading-[1.05] text-stone-100 mb-6" style={{ animationDelay: "0.1s" }}>
             How Did Satan
@@ -170,7 +170,7 @@ export default function SatanProject() {
             <span className="italic font-medium gold-text">Get His Look?</span>
           </h1>
           <p className="reveal text-lg sm:text-xl text-stone-400 max-w-2xl mx-auto leading-relaxed italic" style={{ animationDelay: "0.25s" }}>
-            Tracing horns, red skin, goat features, and the modern devil image — not from a single book, but from centuries of fear, art, and folklore.
+            A visual guide into the modern depiction of Satan from the horns, red skin, and goat features.
           </p>
           <button
             onClick={() => scrollTo("figure")}
@@ -249,19 +249,17 @@ export default function SatanProject() {
           <div className="grid md:grid-cols-2 gap-5">
             <ComparisonCard
               accent="amber"
-              tag="◇ Biblical Satan"
-              title="The Adversary"
+              title="Biblical Satan"
               rows={[
                 ["Role", "Tempter, accuser, adversary in God's court"],
                 ["Body", "No clear physical description given"],
                 ["Domain", "Operates in the world; never said to rule Hell"],
-                ["Symbols", "Serpent and dragon — but as metaphor"],
+                ["Symbols", "Serpent and dragon, but as metaphor"],
               ]}
             />
             <ComparisonCard
               accent="red"
-              tag="◆ Modern Satan"
-              title="The Devil-Mascot"
+              title="Modern Satan"
               rows={[
                 ["Role", "Ruler of Hell, master of demons, source of evil"],
                 ["Body", "Red skin, horns, goat legs, hooves, forked tail"],
@@ -355,7 +353,7 @@ export default function SatanProject() {
 
             <div className="border-b border-stone-800 px-8 py-5 bg-gradient-to-b from-red-950/30 to-transparent">
               <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-amber-500/80 mb-1">
-                ◇ Exhibit Item · Feature Study
+                ◇ Exhibit Item
               </div>
               <h3 className="display-font text-3xl text-stone-100">
                 {activeFeatureData.name}
@@ -414,16 +412,12 @@ function SectionLabel({ children, center }) {
   );
 }
 
-function ComparisonCard({ accent, tag, title, rows }) {
+function ComparisonCard({ accent, title, rows }) {
   const accentClass = accent === "red"
     ? "border-red-900/60 from-red-950/40"
     : "border-stone-800 from-stone-950";
-  const tagClass = accent === "red" ? "text-red-400" : "text-amber-500/70";
   return (
     <div className={`border ${accentClass} bg-gradient-to-b to-stone-950 p-7`}>
-      <div className={`mono-font text-[10px] tracking-[0.3em] uppercase mb-2 ${tagClass}`}>
-        {tag}
-      </div>
       <h3 className="display-font text-2xl text-stone-100 mb-5 italic">{title}</h3>
       <ul className="space-y-3">
         {rows.map(([k, v]) => (
