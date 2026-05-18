@@ -42,57 +42,35 @@ export default function SatanProject() {
     { key: "hooves", name: "Goat Legs & Hooves", x: 52, y: 94, video: "/hooves.mp4" },
   ];
 
-  const sourceGroups = [
+  const sources = [
     {
-      heading: "Primary Academic Source",
-      items: [
-        {
-          mla: "Raiswell, Richard, David R. Winter, and Brett Edward Whalen, editors. The Routledge History of the Devil in the Western Tradition. Routledge, 2021.",
-          url: "https://www.routledge.com/The-Routledge-History-of-the-Devil-in-the-Western-Tradition/Raiswell-Brock-Winter/p/book/9780367561420",
-          annotation: "Anchors the project's broad arc, covering the devil's evolution across history, theology, and visual culture.",
-        },
-      ],
+      mla: "Raiswell, Richard, David R. Winter, and Brett Edward Whalen, editors. The Routledge History of the Devil in the Western Tradition. Routledge, 2021.",
+      url: "https://www.routledge.com/The-Routledge-History-of-the-Devil-in-the-Western-Tradition/Raiswell-Brock-Winter/p/book/9780367561420",
+      annotation: "Anchors the project's broad arc, covering the devil's evolution across history, theology, and visual culture.",
     },
     {
-      heading: "JSTOR Sources",
-      items: [
-        {
-          mla: "\"The Horn Motif in Mythology and Folklore.\" JSTOR.",
-          url: "https://www.jstor.org/stable/24410385",
-          annotation: "Used for horns, goat legs & hooves, pagan symbolism, and Pan comparisons.",
-        },
-        {
-          mla: "\"The Iconography of the Utrecht Psalter and the Old English Descent into Hell.\" JSTOR.",
-          url: "https://www.jstor.org/stable/44512342",
-          annotation: "Used for wings, claws, medieval demon imagery, and Hell iconography.",
-        },
-        {
-          mla: "\"The Baltic Psaltery and Musical Instruments in Medieval Iconography.\" JSTOR.",
-          url: "https://www.jstor.org/stable/43211188",
-          annotation: "Used for goat legs & hooves, medieval Satan imagery, and goat symbolism.",
-        },
-      ],
+      mla: "\"The Horn Motif in Mythology and Folklore.\" JSTOR.",
+      url: "https://www.jstor.org/stable/24410385",
+      annotation: "Used for horns, goat legs & hooves, pagan symbolism, and Pan comparisons.",
     },
     {
-      heading: "Supporting Research Source",
-      items: [
-        {
-          mla: "\"Devil in Christianity.\" Wikipedia, Wikimedia Foundation.",
-          url: "https://en.wikipedia.org/wiki/Devil_in_Christianity",
-          annotation: "Used for preliminary background research, theological terminology, and reference guidance toward stronger academic sources.",
-        },
-      ],
+      mla: "\"The Iconography of the Utrecht Psalter and the Old English Descent into Hell.\" JSTOR.",
+      url: "https://www.jstor.org/stable/44512342",
+      annotation: "Used for wings, claws, medieval demon imagery, and Hell iconography.",
     },
     {
-      heading: "Biblical References Consulted",
-      items: [
-        { mla: "Genesis 3" },
-        { mla: "Isaiah 14" },
-        { mla: "Revelation 12" },
-        { mla: "Matthew 25" },
-      ],
+      mla: "\"The Baltic Psaltery and Musical Instruments in Medieval Iconography.\" JSTOR.",
+      url: "https://www.jstor.org/stable/43211188",
+      annotation: "Used for goat legs & hooves, medieval Satan imagery, and goat symbolism.",
+    },
+    {
+      mla: "\"Devil in Christianity.\" Wikipedia, Wikimedia Foundation.",
+      url: "https://en.wikipedia.org/wiki/Devil_in_Christianity",
+      annotation: "Used for preliminary background research, theological terminology, and reference guidance toward stronger academic sources.",
     },
   ];
+
+  const biblicalReferences = ["Genesis 3", "Isaiah 14", "Revelation 12", "Matthew 25"];
 
   const activeFeatureData = features.find((f) => f.key === activeFeature);
 
@@ -288,43 +266,39 @@ export default function SatanProject() {
             <span className="italic gold-text">Sources</span> & Notes
           </h2>
 
-          <div className="space-y-12">
-            {sourceGroups.map((group) => (
-              <div key={group.heading}>
-                <h3 className="display-font text-xl sm:text-2xl gold-text mb-5 pb-2 border-b border-amber-900/40">
-                  {group.heading}
-                </h3>
-                <div className="space-y-6">
-                  {group.items.map((s, i) => (
-                    <div key={i} className="border-l-2 border-amber-800/50 hover:border-amber-500 transition-colors pl-6 py-1 group">
-                      <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-2">
-                        Source {String(i + 1).padStart(2, "0")}
-                      </div>
-                      {s.url ? (
-                        <a
-                          href={s.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="display-font text-lg text-stone-100 leading-snug mb-2 block hover:text-amber-300 transition-colors group-hover:underline decoration-amber-700/50 underline-offset-4"
-                        >
-                          {s.mla}
-                          <span className="inline-block ml-2 text-amber-500/70 text-sm not-italic" aria-hidden="true">↗</span>
-                        </a>
-                      ) : (
-                        <div className="display-font text-lg text-stone-100 leading-snug">
-                          {s.mla}
-                        </div>
-                      )}
-                      {s.annotation && (
-                        <p className="text-stone-400 leading-relaxed italic mt-2">
-                          {s.annotation}
-                        </p>
-                      )}
-                    </div>
-                  ))}
+          <div className="space-y-6">
+            {sources.map((s, i) => (
+              <div key={i} className="border-l-2 border-amber-800/50 hover:border-amber-500 transition-colors pl-6 py-1 group">
+                <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-2">
+                  Source {String(i + 1).padStart(2, "0")}
                 </div>
+                <a
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="display-font text-lg text-stone-100 leading-snug mb-2 block hover:text-amber-300 transition-colors group-hover:underline decoration-amber-700/50 underline-offset-4"
+                >
+                  {s.mla}
+                  <span className="inline-block ml-2 text-amber-500/70 text-sm not-italic" aria-hidden="true">↗</span>
+                </a>
+                <p className="text-stone-400 leading-relaxed italic mt-2">
+                  {s.annotation}
+                </p>
               </div>
             ))}
+          </div>
+
+          <div className="mt-12">
+            <h3 className="display-font text-xl sm:text-2xl gold-text mb-5 pb-2 border-b border-amber-900/40">
+              Biblical References
+            </h3>
+            <ul className="space-y-2 pl-6">
+              {biblicalReferences.map((ref) => (
+                <li key={ref} className="display-font text-lg text-stone-100">
+                  {ref}
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
