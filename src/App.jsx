@@ -42,46 +42,54 @@ export default function SatanProject() {
     { key: "hooves", name: "Goat Legs & Hooves", x: 52, y: 94, video: "/hooves.mp4" },
   ];
 
-  const sources = [
+  const sourceGroups = [
     {
-      mla: "Raiswell, Richard, Michelle D. Brock, and David R. Winter, editors. The Routledge History of the Devil in the Western Tradition. Routledge, 2025.",
-      url: "https://www.routledge.com/The-Routledge-History-of-the-Devil-in-the-Western-Tradition/Raiswell-Brock-Winter/p/book/9780367561420",
-      annotation: "A recent interdisciplinary volume covering 2,000 years of the devil's evolution across history, religion, art, and media studies. I use it for the broad arc of my project — especially how medieval imagery connects to contemporary pop culture.",
+      heading: "Primary Academic Source",
+      items: [
+        {
+          mla: "Raiswell, Richard, David R. Winter, and Brett Edward Whalen, editors. The Routledge History of the Devil in the Western Tradition. Routledge, 2021.",
+          url: "https://www.routledge.com/The-Routledge-History-of-the-Devil-in-the-Western-Tradition/Raiswell-Brock-Winter/p/book/9780367561420",
+        },
+      ],
     },
     {
-      mla: "Simon, Ed. Pandemonium: A Visual History of Demonology. Cernunnos / Abrams, 2022.",
-      url: "https://www.abramsbooks.com/product/pandemonium_9782374953243/",
-      annotation: "Pairs scholarly analysis with hundreds of historical images of demons and the devil. Essential for a visually-focused project; I draw on it for the medieval and Renaissance sections, where Simon shows how artists assembled the devil's look from older mythology.",
+      heading: "JSTOR Sources",
+      items: [
+        {
+          mla: "\"The Horn Motif in Mythology and Folklore.\" JSTOR.",
+          url: "https://www.jstor.org/stable/24410385",
+          usedFor: ["Horns", "Goat Legs & Hooves", "Pagan symbolism", "Pan comparisons"],
+        },
+        {
+          mla: "\"The Iconography of the Utrecht Psalter and the Old English Descent into Hell.\" JSTOR.",
+          url: "https://www.jstor.org/stable/44512342",
+          usedFor: ["Wings", "Claws", "Medieval demon imagery", "Hell iconography"],
+        },
+        {
+          mla: "\"The Baltic Psaltery and Musical Instruments in Medieval Iconography.\" JSTOR.",
+          url: "https://www.jstor.org/stable/43211188",
+          usedFor: ["Goat Legs & Hooves", "Medieval Satan imagery", "Goat symbolism"],
+        },
+      ],
     },
     {
-      mla: "Paparoni, Demetrio. The Art of the Devil: An Illustrated History. Cernunnos / Abrams, 2019.",
-      url: "https://www.abramsbooks.com/product/art-of-the-devil_9782374951171/",
-      annotation: "The most comprehensive illustrated history of the devil in Western and Eastern art. I use it for the feature breakdown section, since Paparoni traces specific iconographic elements (horns, goat-form, snake) back to their visual sources one by one.",
+      heading: "Supporting Research Source",
+      items: [
+        {
+          mla: "\"Devil in Christianity.\" Wikipedia, Wikimedia Foundation.",
+          url: "https://en.wikipedia.org/wiki/Devil_in_Christianity",
+          usedFor: ["Preliminary background research", "Theological terminology", "Reference guidance toward stronger academic sources"],
+        },
+      ],
     },
     {
-      mla: "Laycock, Joseph P. Speak of the Devil: How The Satanic Temple Is Changing the Way We Talk about Religion. Oxford University Press, 2020.",
-      url: "https://global.oup.com/academic/product/speak-of-the-devil-9780190948498",
-      annotation: "Examines how Satan has been reinterpreted in modern American culture, especially through The Satanic Temple. Supports the pop culture section of my project, where I argue the devil's image is still being reworked today.",
-    },
-    {
-      mla: "Almond, Philip C. The Devil: A New Biography. Cornell University Press, 2014.",
-      url: "https://www.cornellpress.cornell.edu/book/9780801479724/the-devil/",
-      annotation: "Traces how the figure of Satan was constructed and re-constructed across two thousand years of Christian thought. Central to my project because it argues directly that theology — not scripture alone — built up the devil we recognize today.",
-    },
-    {
-      mla: "Oldridge, Darren. The Devil: A Very Short Introduction. Oxford University Press, 2012.",
-      url: "https://global.oup.com/academic/product/the-devil-a-very-short-introduction-9780199580996",
-      annotation: "A concise but rigorous overview of the devil's evolution, with strong attention to medieval and early modern visual culture. I use it for the sections on medieval art and the Renaissance.",
-    },
-    {
-      mla: "Pagels, Elaine. The Origin of Satan: How Christians Demonized Jews, Pagans, and Heretics. Vintage Books, 1996.",
-      url: "https://www.penguinrandomhouse.com/books/166497/the-origin-of-satan-by-elaine-pagels/",
-      annotation: "Pagels traces Satan from a minor obstructive figure in the Hebrew Bible to the Prince of Darkness in the New Testament. I rely on it for my Biblical Origins and Early Christianity sections, where she shows how Satan became a tool for demonizing outsiders.",
-    },
-    {
-      mla: "Faxneld, Per. Satanic Feminism: Lucifer as the Liberator of Woman in Nineteenth-Century Culture. Oxford University Press, 2017.",
-      url: "https://global.oup.com/academic/product/satanic-feminism-9780190664473",
-      annotation: "Argues that 19th-century artists and suffragists reimagined Satan as a symbol of liberation and self-determination, especially for women. Supports my modern pop culture section by showing the devil's image has been rewritten as often as it has been inherited.",
+      heading: "Biblical References Consulted",
+      items: [
+        { mla: "Genesis 3" },
+        { mla: "Isaiah 14" },
+        { mla: "Revelation 12" },
+        { mla: "Matthew 25" },
+      ],
     },
   ];
 
@@ -279,24 +287,45 @@ export default function SatanProject() {
             <span className="italic gold-text">Sources</span> & Notes
           </h2>
 
-          <div className="space-y-6">
-            {sources.map((s, i) => (
-              <div key={i} className="border-l-2 border-amber-800/50 hover:border-amber-500 transition-colors pl-6 py-1 group">
-                <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-2">
-                  Source {String(i + 1).padStart(2, "0")}
+          <div className="space-y-12">
+            {sourceGroups.map((group) => (
+              <div key={group.heading}>
+                <h3 className="display-font text-xl sm:text-2xl gold-text mb-5 pb-2 border-b border-amber-900/40">
+                  {group.heading}
+                </h3>
+                <div className="space-y-6">
+                  {group.items.map((s, i) => (
+                    <div key={i} className="border-l-2 border-amber-800/50 hover:border-amber-500 transition-colors pl-6 py-1 group">
+                      {s.url ? (
+                        <a
+                          href={s.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="display-font text-lg text-stone-100 leading-snug block hover:text-amber-300 transition-colors group-hover:underline decoration-amber-700/50 underline-offset-4"
+                        >
+                          {s.mla}
+                          <span className="inline-block ml-2 text-amber-500/70 text-sm not-italic" aria-hidden="true">↗</span>
+                        </a>
+                      ) : (
+                        <div className="display-font text-lg text-stone-100 leading-snug">
+                          {s.mla}
+                        </div>
+                      )}
+                      {s.usedFor && (
+                        <div className="mt-3 flex flex-wrap gap-2">
+                          {s.usedFor.map((tag) => (
+                            <span
+                              key={tag}
+                              className="mono-font text-[10px] tracking-[0.2em] uppercase px-2.5 py-1 border border-stone-700 text-stone-400"
+                            >
+                              {tag}
+                            </span>
+                          ))}
+                        </div>
+                      )}
+                    </div>
+                  ))}
                 </div>
-                <a
-                  href={s.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="display-font text-lg text-stone-100 leading-snug mb-2 block hover:text-amber-300 transition-colors group-hover:underline decoration-amber-700/50 underline-offset-4"
-                >
-                  {s.mla}
-                  <span className="inline-block ml-2 text-amber-500/70 text-sm not-italic" aria-hidden="true">↗</span>
-                </a>
-                <p className="text-stone-400 leading-relaxed italic mt-2">
-                  {s.annotation}
-                </p>
               </div>
             ))}
           </div>
