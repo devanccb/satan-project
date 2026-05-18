@@ -49,6 +49,7 @@ export default function SatanProject() {
         {
           mla: "Raiswell, Richard, David R. Winter, and Brett Edward Whalen, editors. The Routledge History of the Devil in the Western Tradition. Routledge, 2021.",
           url: "https://www.routledge.com/The-Routledge-History-of-the-Devil-in-the-Western-Tradition/Raiswell-Brock-Winter/p/book/9780367561420",
+          annotation: "Anchors the project's broad arc, covering the devil's evolution across history, theology, and visual culture.",
         },
       ],
     },
@@ -58,17 +59,17 @@ export default function SatanProject() {
         {
           mla: "\"The Horn Motif in Mythology and Folklore.\" JSTOR.",
           url: "https://www.jstor.org/stable/24410385",
-          usedFor: ["Horns", "Goat Legs & Hooves", "Pagan symbolism", "Pan comparisons"],
+          annotation: "Used for horns, goat legs & hooves, pagan symbolism, and Pan comparisons.",
         },
         {
           mla: "\"The Iconography of the Utrecht Psalter and the Old English Descent into Hell.\" JSTOR.",
           url: "https://www.jstor.org/stable/44512342",
-          usedFor: ["Wings", "Claws", "Medieval demon imagery", "Hell iconography"],
+          annotation: "Used for wings, claws, medieval demon imagery, and Hell iconography.",
         },
         {
           mla: "\"The Baltic Psaltery and Musical Instruments in Medieval Iconography.\" JSTOR.",
           url: "https://www.jstor.org/stable/43211188",
-          usedFor: ["Goat Legs & Hooves", "Medieval Satan imagery", "Goat symbolism"],
+          annotation: "Used for goat legs & hooves, medieval Satan imagery, and goat symbolism.",
         },
       ],
     },
@@ -78,7 +79,7 @@ export default function SatanProject() {
         {
           mla: "\"Devil in Christianity.\" Wikipedia, Wikimedia Foundation.",
           url: "https://en.wikipedia.org/wiki/Devil_in_Christianity",
-          usedFor: ["Preliminary background research", "Theological terminology", "Reference guidance toward stronger academic sources"],
+          annotation: "Used for preliminary background research, theological terminology, and reference guidance toward stronger academic sources.",
         },
       ],
     },
@@ -296,12 +297,15 @@ export default function SatanProject() {
                 <div className="space-y-6">
                   {group.items.map((s, i) => (
                     <div key={i} className="border-l-2 border-amber-800/50 hover:border-amber-500 transition-colors pl-6 py-1 group">
+                      <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-stone-500 mb-2">
+                        Source {String(i + 1).padStart(2, "0")}
+                      </div>
                       {s.url ? (
                         <a
                           href={s.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="display-font text-lg text-stone-100 leading-snug block hover:text-amber-300 transition-colors group-hover:underline decoration-amber-700/50 underline-offset-4"
+                          className="display-font text-lg text-stone-100 leading-snug mb-2 block hover:text-amber-300 transition-colors group-hover:underline decoration-amber-700/50 underline-offset-4"
                         >
                           {s.mla}
                           <span className="inline-block ml-2 text-amber-500/70 text-sm not-italic" aria-hidden="true">↗</span>
@@ -311,17 +315,10 @@ export default function SatanProject() {
                           {s.mla}
                         </div>
                       )}
-                      {s.usedFor && (
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {s.usedFor.map((tag) => (
-                            <span
-                              key={tag}
-                              className="mono-font text-[10px] tracking-[0.2em] uppercase px-2.5 py-1 border border-stone-700 text-stone-400"
-                            >
-                              {tag}
-                            </span>
-                          ))}
-                        </div>
+                      {s.annotation && (
+                        <p className="text-stone-400 leading-relaxed italic mt-2">
+                          {s.annotation}
+                        </p>
                       )}
                     </div>
                   ))}
