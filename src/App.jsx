@@ -34,60 +34,12 @@ export default function SatanProject() {
   // Hotspots on the image — positions as % of image width/height
   // for responsive scaling.
   const features = [
-    {
-      key: "horns",
-      name: "Horns",
-      x: 50, y: 9,
-      origin: "Pre-Christian gods like Pan, Cernunnos, and various Mesopotamian deities.",
-      why: "Horns originally symbolized divine power, fertility, and strength. As Christianity discredited older gods, horned deities were recast as demonic. Medieval artists then standardized horns as visual shorthand for evil.",
-      type: "Cultural / Artistic",
-      biblical: false,
-    },
-    {
-      key: "wings",
-      name: "Wings",
-      x: 15, y: 30,
-      origin: "The 'fallen angel' tradition — angels have wings, so a fallen one does too.",
-      why: "Once Satan was identified with a fallen angel (Lucifer), artists kept the wings but made them dark, leathery, and bat-like to mark the corruption. The contrast with white feathered angel wings is a purely artistic invention.",
-      type: "Theological / Artistic",
-      biblical: false,
-    },
-    {
-      key: "skin",
-      name: "Red Skin",
-      x: 50, y: 30,
-      origin: "Medieval art, reinforced by mystery plays and later pop culture.",
-      why: "Red was the color of fire, blood, sin, and Hell in the medieval imagination. Mystery plays dressed actors playing devils in red, and that stage convention bled into art and eventually into cartoons. The Bible never describes Satan's skin color.",
-      type: "Artistic / Cultural",
-      biblical: false,
-    },
-    {
-      key: "claws",
-      name: "Claws",
-      x: 27, y: 61,
-      origin: "Medieval bestiaries blending dragons, beasts of prey, and birds of carrion.",
-      why: "Medieval artists drew on the scariest features of nature when designing the devil. Sharp claws appear on demons in church frescoes, manuscript illuminations, and Last Judgment scenes to signal that the figure is a predator on human souls — a visual borrowed from monsters, not scripture.",
-      type: "Artistic",
-      biblical: false,
-    },
-    {
-      key: "tail",
-      name: "Tail",
-      x: 85, y: 82,
-      origin: "Medieval bestiaries and monster art.",
-      why: "Medieval artists drew on dragons, serpents, and beasts when designing demons, and a tail was a standard feature of monstrous creatures. The forked tip became a signature flourish in later illustrations. There is no biblical mention of Satan having a tail.",
-      type: "Artistic",
-      biblical: false,
-    },
-    {
-      key: "hooves",
-      name: "Goat Legs & Hooves",
-      x: 52, y: 94,
-      origin: "The Greek god Pan and other goat-deities.",
-      why: "Pan was a horned, hooved, half-goat god of wild places and lust. When the Church demonized pagan gods, Pan's body was recycled as Satan's. Goats also became symbolically linked to sin through Matthew 25's image of separating sheep from goats.",
-      type: "Pagan / Cultural",
-      biblical: false,
-    },
+    { key: "horns",  name: "Horns",              x: 50, y: 9,  video: "/horns.mp4"  },
+    { key: "wings",  name: "Wings",              x: 15, y: 30, video: "/wings.mp4"  },
+    { key: "skin",   name: "Red Skin",           x: 50, y: 30, video: "/skin.mp4"   },
+    { key: "claws",  name: "Claws",              x: 27, y: 61, video: "/claws.mp4"  },
+    { key: "tail",   name: "Tail",               x: 85, y: 82, video: "/tail.mp4"   },
+    { key: "hooves", name: "Goat Legs & Hooves", x: 52, y: 94, video: "/hooves.mp4" },
   ];
 
   const sources = [
@@ -410,35 +362,15 @@ export default function SatanProject() {
               </h3>
             </div>
 
-            <div className="px-8 py-6 space-y-5">
-              <div>
-                <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-amber-500/70 mb-2">
-                  Where it came from
-                </div>
-                <p className="text-stone-300 leading-relaxed">
-                  {activeFeatureData.origin}
-                </p>
-              </div>
-              <div>
-                <div className="mono-font text-[10px] tracking-[0.3em] uppercase text-amber-500/70 mb-2">
-                  Why it stuck to Satan
-                </div>
-                <p className="text-stone-300 leading-relaxed">
-                  {activeFeatureData.why}
-                </p>
-              </div>
-              <div className="flex flex-wrap gap-2 pt-2">
-                <span className="mono-font text-[10px] tracking-[0.25em] uppercase px-3 py-1 border border-stone-700 text-stone-300">
-                  {activeFeatureData.type}
-                </span>
-                <span className={`mono-font text-[10px] tracking-[0.25em] uppercase px-3 py-1 border ${
-                  activeFeatureData.biblical
-                    ? "border-amber-700 text-amber-300"
-                    : "border-red-900 text-red-300"
-                }`}>
-                  {activeFeatureData.biblical ? "✓ Biblical" : "✗ Not biblical"}
-                </span>
-              </div>
+            <div className="px-8 py-6">
+              <video
+                key={activeFeatureData.key}
+                src={activeFeatureData.video}
+                controls
+                autoPlay
+                playsInline
+                className="w-full h-auto bg-black border border-stone-800"
+              />
             </div>
 
             <div className="border-t border-stone-800 px-8 py-4 flex items-center justify-between bg-stone-950/40">
