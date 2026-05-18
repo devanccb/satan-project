@@ -309,7 +309,8 @@ export default function SatanProject() {
           <blockquote className="display-font text-2xl sm:text-3xl text-stone-100 leading-snug italic font-light mt-8">
             "The Satan we imagine today is{" "}
             <span className="gold-text not-italic font-medium">shaped less from the biblical depiction</span>{" "}
-            and more from a collection of visual ideas that evolved from centuries of art, fear, folklore, and pop culture."
+            and <span className="gold-text not-italic font-medium">more from a collection of visual ideas</span>{" "}
+            that evolved from centuries of art, fear, folklore, and pop culture."
           </blockquote>
           <div className="mt-12 mono-font text-[10px] tracking-[0.4em] uppercase text-stone-600">
             — Thank You Megan and Professor Huber! —
