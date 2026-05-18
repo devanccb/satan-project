@@ -46,7 +46,7 @@ export default function SatanProject() {
     {
       mla: "Raiswell, Richard, David R. Winter, and Brett Edward Whalen, editors. The Routledge History of the Devil in the Western Tradition. Routledge, 2021.",
       url: "https://www.routledge.com/The-Routledge-History-of-the-Devil-in-the-Western-Tradition/Raiswell-Brock-Winter/p/book/9780367561420",
-      annotation: "Anchors the project's broad arc, covering the devil's evolution across history, theology, and visual culture.",
+      annotation: "Covering Satan's evolution across history, theology, and culture.",
     },
     {
       mla: "\"The Horn Motif in Mythology and Folklore.\" JSTOR.",
@@ -62,11 +62,6 @@ export default function SatanProject() {
       mla: "\"The Baltic Psaltery and Musical Instruments in Medieval Iconography.\" JSTOR.",
       url: "https://www.jstor.org/stable/43211188",
       annotation: "Used for goat legs & hooves, medieval Satan imagery, and goat symbolism.",
-    },
-    {
-      mla: "\"Devil in Christianity.\" Wikipedia, Wikimedia Foundation.",
-      url: "https://en.wikipedia.org/wiki/Devil_in_Christianity",
-      annotation: "Used for preliminary background research, theological terminology, and reference guidance toward stronger academic sources.",
     },
   ];
 
@@ -312,12 +307,12 @@ export default function SatanProject() {
         <div className="relative max-w-3xl mx-auto text-center">
           <SectionLabel center>IV. Final Takeaway</SectionLabel>
           <blockquote className="display-font text-2xl sm:text-3xl text-stone-100 leading-snug italic font-light mt-8">
-            "The Satan we recognize today is{" "}
-            <span className="gold-text not-italic font-medium">less a single biblical figure</span>{" "}
-            and more a visual construction shaped by centuries of art, theology, fear, folklore, and popular culture."
+            "The Satan we imagine today is{" "}
+            <span className="gold-text not-italic font-medium">shaped less from the biblical depiction</span>{" "}
+            and more from a collection of visual ideas that evolved from centuries of art, fear, folklore, and pop culture."
           </blockquote>
           <div className="mt-12 mono-font text-[10px] tracking-[0.4em] uppercase text-stone-600">
-            — End of Project —
+            — Thank You Megan and Professor Huber! —
           </div>
         </div>
       </section>
